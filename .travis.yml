@@ -1,10 +1,12 @@
 language: node_js
 
+os: linux
 dist: focal
 
 node_js:
   - node
   - lts/*
+  - 17
 
 script:
   - npm run lint
