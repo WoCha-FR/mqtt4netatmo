@@ -13,8 +13,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
-    "cover": "jest --coverage",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage"
   },
   "repository": {
     "type": "git",
