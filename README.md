@@ -39,6 +39,7 @@ Options:
   -t, --mqttTopic     mqtt topic prefix                     [default: "netatmo"]
   -v, --logVerbosity  possible values: "error", "warn", "info", "debug" [default: "info"]
   -s, --sslVerify     allow ssl connections with invalid certs
+  -z, --noColor       log with no color
       --version       Show version number                              [boolean]
   -h, --help          Show help                                        [boolean]
 ```
@@ -68,6 +69,7 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   type: 'NAMain',
   home: 'Home',
   online: 1,
+  timeutc: 1672119606,
   wifistatus: 39
 }
 ```
@@ -84,6 +86,7 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   home: 'Home',
   online: 1,
   rfstatus: 66,
+  timeutc: 1672119606,
   battery: 75
 }
 ```
@@ -102,6 +105,7 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   home: 'Home',
   online: 1,
   rfstatus: 31,
+  timeutc: 1672119606,
   battery: 58
 }
 ```
@@ -119,6 +123,7 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   home: 'Home',
   online: 1,
   rfstatus: 31,
+  timeutc: 1672119606,
   battery: 58
 }
 ```
@@ -137,6 +142,7 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   home: 'Home',
   online: 1,
   rfstatus: 69,
+  timeutc: 1672119606,
   battery: 51
 }
 ```
@@ -155,6 +161,7 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   online: 1,
   pressure: 45,
   pressureabs: 1022.9,
+  timeutc: 1672119606,
   temperature: 23.7,
   type: 'NHC',
   wifistatus: 22
