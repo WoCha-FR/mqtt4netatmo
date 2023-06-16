@@ -14,8 +14,7 @@
     "lint": "eslint .",
     "fixlint": "eslint --fix .",
     "test": "jest",
-    "cover": "jest --coverage",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
