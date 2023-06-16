@@ -13,9 +13,6 @@ jobs:
       matrix:
         node-version: ['16', '17', 'lts/*', 'node']
     steps:
-      - uses: szenius/set-timezone@v1.2
-        with:
-          timezoneLinux: "Europe/Paris"
       - uses: actions/checkout@master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@master
