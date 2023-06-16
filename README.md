@@ -61,6 +61,10 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   pressure: 1013,
   pressureabs: 956.7,
   pressuretrend: 'stable',
+  mintemp: 21.4,
+  mintemputc: 1686883090,
+  maxtemp: 22.9,
+  maxtemputc: 1686866460,
   humidity: 51,
   co2: 588,
   noise: 32,
@@ -79,6 +83,10 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
 [netatmo/01:00:00:00:00:00] {
   temperature: 15.5,
   temptrend: 'up',
+  mintemp: 18.5,
+  mintemputc: 1671883057,
+  maxtemp: 21.1,
+  maxtemputc: 1671866446,
   humidity: 83,
   id: '01:00:00:00:00:00',
   name: 'Outdoor',
@@ -99,6 +107,9 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   windangle: 75,
   guststrength: 3,
   gustangle: 75,
+  windstrenghtmax: 20,
+  windanglemax: 45,
+  windmaxutc: 1672119306
   id: '02:00:00:00:00:00',
   name: 'Wind',
   type: 'NAModule2',
@@ -134,6 +145,10 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
 [netatmo/04:00:00:00:00:00] {
   temperature: 19.1,
   temptrend: 'stable',
+  mintemp: 18.5,
+  mintemputc: 1671883057,
+  maxtemp: 21.1,
+  maxtemputc: 1671866446,
   humidity: 57,
   co2: 544,
   id: '04:00:00:00:00:00',
@@ -163,6 +178,10 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   pressureabs: 1022.9,
   timeutc: 1672119606,
   temperature: 23.7,
+  mintemp: 18.5,
+  mintemputc: 1671883057,
+  maxtemp: 21.1,
+  maxtemputc: 1671866446,
   type: 'NHC',
   wifistatus: 22
 }

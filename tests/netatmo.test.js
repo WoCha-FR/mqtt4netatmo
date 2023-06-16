@@ -244,7 +244,7 @@ describe('Specific functions', () => {
   describe('data cleaning', () => {
     test('process measure of station', async () => {
       const input = { body: { devices: [{ _id: '70:ee:50:22:a3:00', module_name: 'TestAllValues', dashboard_data: { time_utc: 1555677739, Temperature: 23.7, CO2: 967, Humidity: 41, Noise: 42, Pressure: 997.6, AbsolutePressure: 1017.4, min_temp: 21.2, max_temp: 27.4, date_min_temp: 1555631374, date_max_temp: 1555662436, temp_trend: 'up', pressure_trend: 'up', Rain: 0, sum_rain_24: 0, sum_rain_1: 0, WindStrength: 2, WindAngle: 75, GustStrength: 3, GustAngle: 75, max_wind_str: 4, max_wind_angle: 100, date_max_wind_str: 1555673190, co2: 967, health_idx: 1 }, reachable: true }] } }
-      const output = { co2: 967, gustangle: 75, guststrength: 3, healthidx: 1, humidity: 41, noise: 42, pressure: 997.6, pressureabs: 1017.4, pressuretrend: 'up', rain: 0, sumrain1: 0, sumrain24: 0, temperature: 23.7, temptrend: 'up', timeutc: 1555677739, windangle: 75, windstrength: 2 }
+      const output = { co2: 967, gustangle: 75, guststrength: 3, healthidx: 1, humidity: 41, maxtemp: 27.4, maxtemputc: 1555662436, mintemp: 21.2, mintemputc: 1555631374, noise: 42, pressure: 997.6, pressureabs: 1017.4, pressuretrend: 'up', rain: 0, sumrain1: 0, sumrain24: 0, temperature: 23.7, temptrend: 'up', timeutc: 1555677739, windangle: 75, windanglemax: 100, windstrenghtmax: 4, windmaxutc: 1555673190, windstrength: 2 }
       const data = await client.processMeasure(input.body.devices[0].dashboard_data)
       expect(data).toStrictEqual(output)
     })
@@ -265,7 +265,7 @@ describe('Specific functions', () => {
       await client.processStation(stationData.body.devices[0])
       expect.assertions(2)
       expect(spy1).toHaveBeenCalledWith(stationData.body.devices[0].dashboard_data)
-      expect(spy2).toHaveBeenCalledWith('frame', { co2: 967, home: 'Home', humidity: 41, id: '70:ee:50:22:a3:00', name: 'Casa', noise: 42, online: 1, pressure: 997.6, pressureabs: 1017.4, pressuretrend: 'up', timeutc: 1555677739, temperature: 23.7, temptrend: 'up', type: 'NAMain', wifistatus: 55 })
+      expect(spy2).toHaveBeenCalledWith('frame', { co2: 967, home: 'Home', humidity: 41, id: '70:ee:50:22:a3:00', maxtemp: 27.4, maxtemputc: 1555662436, mintemp: 21.2, mintemputc: 1555631374, name: 'Casa', noise: 42, online: 1, pressure: 997.6, pressureabs: 1017.4, pressuretrend: 'up', timeutc: 1555677739, temperature: 23.7, temptrend: 'up', type: 'NAMain', wifistatus: 55 })
     })
 
     test('process Weather Station : Indoor', async () => {
@@ -274,7 +274,7 @@ describe('Specific functions', () => {
       await client.processStation(stationData.body.devices[0])
       expect.assertions(2)
       expect(spy1).toHaveBeenCalledWith(stationData.body.devices[0].modules[0].dashboard_data)
-      expect(spy2).toHaveBeenCalledWith('frame', { battery: 58, co2: 967, home: 'Home', humidity: 41, id: '06:00:00:02:47:04', name: 'Indoor Module', online: 1, pressure: 997.6, pressureabs: 1017.4, rfstatus: 31, temperature: 23.7, temptrend: 'up', timeutc: 1555677739, type: 'NAModule4' })
+      expect(spy2).toHaveBeenCalledWith('frame', { battery: 58, co2: 967, home: 'Home', humidity: 41, id: '06:00:00:02:47:04', maxtemp: 27.4, maxtemputc: 1555662436, mintemp: 21.2, mintemputc: 1555631374, name: 'Indoor Module', online: 1, pressure: 997.6, pressureabs: 1017.4, rfstatus: 31, temperature: 23.7, temptrend: 'up', timeutc: 1555677739, type: 'NAModule4' })
     })
 
     test('process Weather Station : Outdoor', async () => {
@@ -283,7 +283,7 @@ describe('Specific functions', () => {
       await client.processStation(stationData.body.devices[0])
       expect.assertions(2)
       expect(spy1).toHaveBeenCalledWith(stationData.body.devices[0].modules[1].dashboard_data)
-      expect(spy2).toHaveBeenCalledWith('frame', { battery: 58, home: 'Home', humidity: 41, id: '06:00:00:02:47:01', name: 'Outdoor Module', online: 1, rfstatus: 31, timeutc: 1555677739, temperature: 23.7, temptrend: 'up', type: 'NAModule1' })
+      expect(spy2).toHaveBeenCalledWith('frame', { battery: 58, home: 'Home', humidity: 41, id: '06:00:00:02:47:01', maxtemp: 27.4, maxtemputc: 1555662436, mintemp: 21.2, mintemputc: 1555631374, name: 'Outdoor Module', online: 1, rfstatus: 31, timeutc: 1555677739, temperature: 23.7, temptrend: 'up', type: 'NAModule1' })
     })
 
     test('process Weather Station : Rain', async () => {
@@ -305,7 +305,7 @@ describe('Specific functions', () => {
       const spy2 = jest.spyOn(eventEmitter, 'emit').mockImplementation(() => {})
       await client.processAircare(aircareData.body.devices[0])
       expect(spy1).toHaveBeenCalledWith(aircareData.body.devices[0].dashboard_data)
-      expect(spy2).toHaveBeenCalledWith('frame', { co2: 967, healthidx: 1, humidity: 41, id: '70:ee:50:22:a3:00', module: 'string', name: 'Bedroom', noise: 42, online: 1, pressure: 45, pressureabs: 1022.9, temperature: 23.7, timeutc: 1555677780, type: 'NHC', wifistatus: 22 })
+      expect(spy2).toHaveBeenCalledWith('frame', { co2: 967, healthidx: 1, humidity: 41, id: '70:ee:50:22:a3:00', maxtemp: 27.4, maxtemputc: 1555662436, mintemp: 21.2, mintemputc: 1555631374, module: 'string', name: 'Bedroom', noise: 42, online: 1, pressure: 45, pressureabs: 1022.9, temperature: 23.7, timeutc: 1555677780, type: 'NHC', wifistatus: 22 })
     })
   })
 
