@@ -3,7 +3,6 @@
 [![npm](https://img.shields.io/npm/v/mqtt4netatmo)](https://www.npmjs.com/package/mqtt4netatmo)
 [![License](https://img.shields.io/github/license/WoCha-FR/mqtt4netatmo)](https://github.com/WoCha-FR/mqtt4netatmo/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/WoCha-FR/mqtt4netatmo/node-js.yml?branch=main)](https://github.com/WoCha-FR/mqtt4netatmo/actions/workflows/node-js.yml)
-[![Coverage Status](https://coveralls.io/repos/github/WoCha-FR/mqtt4netatmo/badge.svg?branch=main)](https://coveralls.io/github/WoCha-FR/mqtt4netatmo?branch=main)
 [![npm](https://img.shields.io/npm/dt/mqtt4netatmo)](https://www.npmjs.com/package/mqtt4netatmo)
 
 Publish values from Netatmo Wethear & Homecoach to MQTT
@@ -27,27 +26,10 @@ npm install -g mqtt4netatmo
 
 ## Usage
 
-```
-Usage: mqtt4netatmo [options]
-
-Options:
-  -a, --username      Netatmo Dev username                            [required]
-  -b, --password      Netatmo Dev password                            [required]
-  -c, --clientId      Netatmo app Client ID                           [required]
-  -d, --clientSecret  Netatmo app Client Secret                       [required]
-  -u, --mqttUrl       mqtt broker url              [default: "mqtt://127.0.0.1"]
-  -t, --mqttTopic     mqtt topic prefix                     [default: "netatmo"]
-  -v, --logVerbosity  possible values: "error", "warn", "info", "debug" [default: "info"]
-  -s, --sslVerify     allow ssl connections with invalid certs
-  -z, --noColor       log with no color
-      --version       Show version number                              [boolean]
-  -h, --help          Show help                                        [boolean]
-```
-
 ### Example
 
 ```
-mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbkzva
+mqtt4netatmo
 ```
 
 ## MQTT Frame Output
@@ -74,7 +56,8 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   home: 'Home',
   online: 1,
   timeutc: 1672119606,
-  wifistatus: 39
+  wifistatus: 39,
+  favorite: 0
 }
 ```
 ### Wheather Outdoor Module
@@ -95,7 +78,8 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   online: 1,
   rfstatus: 66,
   timeutc: 1672119606,
-  battery: 75
+  battery: 75,
+  favorite: 0
 }
 ```
 
@@ -117,7 +101,8 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   online: 1,
   rfstatus: 31,
   timeutc: 1672119606,
-  battery: 58
+  battery: 58,
+  favorite: 0
 }
 ```
 
@@ -135,7 +120,8 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   online: 1,
   rfstatus: 31,
   timeutc: 1672119606,
-  battery: 58
+  battery: 58,
+  favorite: 0
 }
 ```
 
@@ -158,7 +144,8 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   online: 1,
   rfstatus: 69,
   timeutc: 1672119606,
-  battery: 51
+  battery: 51,
+  favorite: 0
 }
 ```
 
@@ -183,7 +170,8 @@ mqtt4netatmo -a user@email.address -b UserPwd -c 10acb39bc818e5789 -d 10dsfxyzbk
   maxtemp: 21.1,
   maxtemputc: 1671866446,
   type: 'NHC',
-  wifistatus: 22
+  wifistatus: 22,
+  favorite: 0
 }
 ```
 

@@ -1,3 +1,7 @@
+# Dev Files
+config.*.json
+state.json
+
 # Logs
 logs
 *.log

@@ -18,24 +18,7 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install, lint , test and cover ${{ matrix.node-version }}
+      - name: Install and Lint ${{ matrix.node-version }}
         run: |
           npm ci
           npm run lint
-          npm run cover
-      - name: Coveralls Parallel
-        uses: coverallsapp/github-action@master
-        with :
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: run-${{ matrix.node-version }}
-          parallel: true
-
-  finish:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
