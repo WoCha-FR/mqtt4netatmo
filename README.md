@@ -1,9 +1,7 @@
 # mqtt4netatmo
 
-[![npm](https://img.shields.io/npm/v/mqtt4netatmo)](https://www.npmjs.com/package/mqtt4netatmo)
 [![License](https://img.shields.io/github/license/WoCha-FR/mqtt4netatmo)](https://github.com/WoCha-FR/mqtt4netatmo/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/WoCha-FR/mqtt4netatmo/node-js.yml?branch=main)](https://github.com/WoCha-FR/mqtt4netatmo/actions/workflows/node-js.yml)
-[![npm](https://img.shields.io/npm/dt/mqtt4netatmo)](https://www.npmjs.com/package/mqtt4netatmo)
 
 Publish values from Netatmo Wethear & Homecoach to MQTT
 
@@ -18,19 +16,9 @@ You need to have a Netatmo weather station and/or an homecoach device **AND** a 
 
 ## Installing
 
-Simply install the package over npm. This will install all the required dependencies.
-
-```
-npm install -g mqtt4netatmo
-```
-
 ## Usage
 
 ### Example
-
-```
-mqtt4netatmo
-```
 
 ## MQTT Frame Output
 
