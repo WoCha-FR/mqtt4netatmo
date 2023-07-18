@@ -1,7 +1,6 @@
 # Dev Files
 config.*.json
 state.json
-data
 
 # Logs
 logs
